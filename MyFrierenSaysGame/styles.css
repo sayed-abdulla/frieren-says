@@ -1,0 +1,145 @@
+body{
+    background-image: url("https://images.squarespace-cdn.com/content/v1/5fe4caeadae61a2f19719512/c83fa090-05e7-4680-ab93-5d7d595735c3/Frieren+Watching+Shooting+Stars");
+    background-size:cover;
+    background-repeat: no-repeat;
+    /* ... other properties ... */
+    min-height: 100vh; /* Ensures the body takes up at least the full viewport height */
+    display: flex; /* Makes the body a flex container */
+    flex-direction: column; /* Arranges its children in a column */
+    align-items: center; /* Centers children horizontally in a column layout */
+    justify-content: center; /* Centers children vertically in a column layout */
+    /* ... other properties ... */
+}
+.start-button-flex{
+    margin-top: -150px;
+    display: flex;
+    justify-content: center;
+}
+#start-button{
+
+    display: flex;
+    align-items: center;
+    justify-self: start;
+    justify-content: space-between;
+    width: 100%px;
+    border-radius: 99px;
+    border-width: 0px;
+    padding: 10px 30px;
+    font-size: 23px;
+    text-align: left;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    background-color: rgb(255, 255, 255);
+    font-family: 'Courier New', Courier, monospace;
+}
+#arrow-circle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px; /* Size of the circle */
+    height: 30px; /* Size of the circle */
+    background-color: #ffc107; /* Yellow color for the circle */
+    border-radius: 50%; /* Makes it a perfect circle */
+    color: #ffffff; /* White color for the arrow */
+    font-size: 18px; /* Size of the arrow */
+    margin-left: 10px; /* Space between text and circle */
+    transform: rotate(10deg); /* Rotate the arrow to match the image */
+  }
+
+/* game grid */
+.grid-container{
+
+display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            position: relative; /* THIS IS KEY: Makes it the positioning context for center-circle */
+            width: 320px; /* Adjust grid width to fit items + gap (2*150px + 10px = 310px, plus some buffer) */
+            height: 320px; /* Adjust grid height */
+            /* Center the grid items within the grid container if they don't fill it */
+            justify-items: center;
+            align-items: center;
+            background-color: rgba(255, 255, 255, 0.1); /* Slight background for grid area */
+            border-radius: 15px;
+            padding: 10px; /* Padding inside the grid container */
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.item{
+    width: 150px;
+    height: 150px;
+    background-color: lightblue; /* This will be overridden by background-image */
+    border: 1px solid steelblue; /* This will be overridden by border-radius */
+    padding: 0; /* Remove padding if using background-size: contain */
+    text-align: center;
+    display: flex; /* For centering text if any */
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Ensures image doesn't spill out of rounded corners */
+}
+.item:hover {
+    cursor: pointer;
+}
+.item-1{
+    opacity: 70%;
+    border-top-left-radius: 30px;
+    background-image: url('images/circle1.jpg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.item-2{
+    opacity: 70%;
+    border-top-right-radius: 30px;
+    background-image: url('images/circle2.webp');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+
+}
+.item-3{
+    opacity: 70%;
+    border-bottom-left-radius: 30px;
+    background-image: url('images/circle3.webp');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+
+}
+.item-4{
+    opacity: 70%;
+    border-bottom-right-radius: 30px;
+    background-image: url('images/circle4.webp');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+
+}
+
+.game-div{
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+}
+/* The circle item to be placed in the middle */
+.center-circle {
+    font-family: 'Courier New', Courier, monospace;
+    position: absolute; /* Positioned relative to its parent (.grid-container) */
+    top: 50%;          /* Move its top edge to the vertical center of .grid-container */
+    left: 50%;         /* Move its left edge to the horizontal center of .grid-container */
+    transform: translate(-50%, -50%); /* Adjust its position to truly center it */
+    width: 80px;      /* Size of the circle */
+    height: 80px;     /* Size of the circle */
+    background-color: #86b3be; /* Orange color */
+    border-radius: 50%; /* Make it a circle */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: add a shadow for depth */
+    z-index: 10; /* Ensure it appears above the grid items */
+    display: flex; /* To center content within the circle if you add any */
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+    font-size: 1.5em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+            
+  }
